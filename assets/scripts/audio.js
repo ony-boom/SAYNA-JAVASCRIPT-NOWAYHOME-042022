@@ -70,7 +70,7 @@ const advance = function(duration, element) {
 	startTimer(duration, element);
 }
 const startTimer = function(duration, element){
-	if(percent < 100) {
+	if(percent < duration) {
 		timer = setTimeout(function (){advance(duration, element)}, 1000);
 	}
 }
