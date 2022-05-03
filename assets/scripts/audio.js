@@ -59,7 +59,6 @@ audioEl.addEventListener("playing", function(_event) {
 	const duration = _event.target.duration;
 	advance(duration, audioEl);
 });
-
 audioEl.addEventListener("pause", function(_event) {
 	clearTimeout(timer);
 });
@@ -67,13 +66,11 @@ audioEl.addEventListener("pause", function(_event) {
 const advance = function(duration, element) {
 	let progress = document.querySelector("progress");
 	progress.max = duration;
-	let increment = 10 / duration;
-	percent = Math.min(increment * element.currentTime * 10, 100);
-	progress.value = percent;
+	progress.value = ++percent;
 	startTimer(duration, element);
 }
 const startTimer = function(duration, element){
 	if(percent < 100) {
-		timer = setTimeout(function (){advance(duration, element)}, 100);
+		timer = setTimeout(function (){advance(duration, element)}, 1000);
 	}
 }
