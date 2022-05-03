@@ -1,0 +1,152 @@
+section > * , footer > * {
+  position: relative;
+  z-index: 8;
+}
+
+.btn {
+  transition: all .3s;
+  box-shadow: 0 12px 25px transparent;
+}
+
+.btn:hover {
+  color: var(--primary-ad-color);
+  background-color: white;
+  box-shadow: 0 5px 8px rgba(255, 255, 255, 0.82);
+}
+
+footer .media img:hover {
+  cursor: pointer;
+  background-color: #42ffd3d4;
+  filter: invert(100%);
+}
+
+#header-top nav .menu ul li a {
+  text-decoration: underline !important;
+  text-decoration-color: transparent !important;
+}
+
+#header-top nav .menu ul li a:hover {
+  text-decoration-color: white !important;
+}
+
+h1, .brand {
+  animation-name: left-right;
+}
+
+h1,p, .brand {
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+h1 + p {
+  animation-name: bottom-top;
+}
+
+@keyframes left-right {
+  0% {
+    transform: translateX(-32px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottom-top {
+  0% {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-dialog > * {
+  background: #b11313;
+  color: white;
+}
+
+.audio-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 14px;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  max-width: 380px;
+  display: grid;
+  gap: 12px;
+}
+
+.song-info__about {
+  flex-grow: 1;
+  padding-right: 5px;
+}
+
+.song-info {
+  display: flex;
+  gap: 12px;
+}
+
+.song-tags > * {
+  margin: 0;
+}
+
+.song-tags {
+  align-items: center;
+}
+
+#song-title {
+  font-weight: 500;
+}
+
+#cover {
+  height: 120px;
+  width: 120px;
+  background-color: #b11313;
+  border-radius: 5px;
+  background-size: cover;
+}
+
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding-top: 4px;
+  background-color: transparent;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.song-state progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+}
+
+.song-state progress::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.47);
+  border-radius: 8px;
+}
+
+.song-state progress::-webkit-progress-value {
+  background-color: #000;
+  border-radius: inherit;
+}
+
+/*.song-state progress::-webkit-progress-bar {
+  background-color: rgba(255, 4, 4, 0.45);
+}*/
