@@ -18,6 +18,7 @@
   <script defer src="assets/scripts/form.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.js"></script>
   <script defer src="assets/scripts/audio.js"></script>
+  <script src="assets/scripts/accordion.js" defer></script>
   <title>Spiderman - Accueil</title>
 </head>
 <body>
@@ -77,8 +78,8 @@
                 <p id="song-title">title</p>
                 <p id="song-artist">artist</p>
               </div>
-              <div class="favorite-box icon">
-                <i class="bi bi-heart"></i>
+              <div class="favorite-box icon" id="is-favorite">
+                <i class="bi bi-heart favorite-icon"></i>
               </div>
             </div>
           </div>
@@ -116,45 +117,47 @@
       </div>
       <div class="row">
         <div class="col-md-4 card-unique">
-          <img alt="..." class="card-img-top" src="./assets/img/img2.png">
-          <div class="card-body">
+          <img alt="..." class="card-img-top image-accordion" src="./assets/img/img2.png">
+          <div class="card-body panel">
             <p class="card-text">Trois films Spiderman sont sortis en 2002, 2004 et 2007. Ils sont produits par Columbia
               Pictures et Spiderman est incarné par Tobey Maguire. Un quatrième était prévu, mais sera finalement annulé
               suite à des désaccords entre Sam Raimi (le réalisateur) et Sony.
               Cette première trilogie a connu un grand succès auprès des fans et du grand public. L’épisode 3 reste à ce
               jour un des films les plus chers de l’histoire du cinéma.
             </p>
-            <button class="btn button1" type="button">Voir ses adversaires</button>
           </div>
+          <button class="btn button1 mt-4" type="button">Voir ses adversaires</button>
         </div>
         <div class="col-md-4 card-unique">
-          <img alt="..." class="card-img-top" src="./assets/img/img3.png">
-          <div class="card-body">
+          <img alt="..." class="card-img-top image-accordion" src="./assets/img/img3.png">
+          <div class="card-body panel">
             <p class="card-text">The Amazing Spiderman est sorti en 2012, c’est Andrew Garfield qui incarne le héros et
               Marc Webb à la réalisation. Un deuxième volet, The Amazing Spider-Man : Le destin d'un héros, est sorti en
               2014 et a reçu des critiques très mitigées. Un troisième et quatrième film étaient prévus pour 2016 et
               2018. Finalement, Marvel et Sony trouvent un accord pour introduire Spiderman dans l'Univers
               cinématographique Marvel et abandonne ainsi The Amazing Spider-Man.
             </p>
-            <button class="btn button1" type="button">Voir ses adversaires</button>
           </div>
+          <button class="btn button1 mt-4" type="button">Voir ses adversaires</button>
         </div>
         <div class="col-md-4 card-unique">
-          <img alt="..." class="card-img-top" src="./assets/img/img4.png">
-          <div class="card-body">
+          <img alt="..." class="card-img-top image-accordion" src="./assets/img/img4.png">
+          <div class="card-body panel">
             <p class="card-text">Spiderman, désormais incarné par Tom Holland, apparaît pour la première fois dans
               l’univers Marvel avec Captain America : Civil War, sorti en 2016. Par la suite, une trilogie de films lui
               est consacrée :
+            </p>
             <ul>
               <li>Spiderman : Homecoming (2017)</li>
               <li>Spiderman : Far From Home (2019)</li>
               <li>Spiderman : No Way Home (2021)</li>
             </ul>
-            Le héro est également présent dans Avengers Infinity War et Avengers End Game, combattant au côté des
-            Avengers.
+            <p>
+              Le héro est également présent dans Avengers Infinity War et Avengers End Game, combattant au côté des
+              Avengers.
             </p>
-            <button class="btn button1" type="button">Voir ses adversaires</button>
           </div>
+          <button class="btn button1 mt-4" type="button">Voir ses adversaires</button>
         </div>
       </div>
     </div>

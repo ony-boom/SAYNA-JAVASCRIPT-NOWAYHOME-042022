@@ -4,11 +4,26 @@ const titleEl = document.getElementById("song-title");
 const artistEl = document.getElementById("song-artist");
 const coverEl = document.getElementById("cover");
 const playBtn = document.getElementById("play");
+const progress = document.querySelector("progress");
+const isFavoriteBtn = document.getElementById("is-favorite");
 
-let currentState = "pause";
+let currentState = "play";
 let timer;
 let percent = 0;
+let isFavorite = false;
 
+function setIsFavorite() {
+	isFavorite = !isFavorite;
+	outputIsFavorite();
+}
+
+function outputIsFavorite() {
+	if (isFavorite) {
+		isFavoriteBtn.querySelector("i").classList.replace("bi-heart", "bi-heart-fill");
+	} else {
+		isFavoriteBtn.querySelector("i").classList.replace("bi-heart-fill", "bi-heart");
+	}
+}
 
 function player(action) {
 	switch (action) {
@@ -50,27 +65,37 @@ jsmediatags.read(audioEl.src, {
 	}
 });
 
+const advance = function (duration, element) {
+	progress.max = duration;
+	progress.value = ++percent;
+	startTimer(duration, element);
+}
+const startTimer = function (duration, element) {
+	if (percent < duration) {
+		timer = setTimeout(function () {
+			advance(duration, element)
+		}, 1000);
+	} else {
+		element.currentTime = 0;
+		percent = element.currentTime;
+		progress.value = percent;
+		switchState(currentState);
+		player(currentState);
+	}
+}
+
 playBtn.addEventListener("click", () => {
 	player(currentState);
 	switchState(currentState);
 });
 
-audioEl.addEventListener("playing", function(_event) {
+audioEl.addEventListener("playing", function (_event) {
 	const duration = _event.target.duration;
 	advance(duration, audioEl);
 });
-audioEl.addEventListener("pause", function(_event) {
+
+audioEl.addEventListener("pause", function (_event) {
 	clearTimeout(timer);
 });
 
-const advance = function(duration, element) {
-	let progress = document.querySelector("progress");
-	progress.max = duration;
-	progress.value = ++percent;
-	startTimer(duration, element);
-}
-const startTimer = function(duration, element){
-	if(percent < duration) {
-		timer = setTimeout(function (){advance(duration, element)}, 1000);
-	}
-}
+isFavoriteBtn.addEventListener("click", setIsFavorite);
